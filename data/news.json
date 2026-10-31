@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-10-26",
+    "content": "Our paper, BuildFlow, has been accepted by IEEE Transactions on Geoscience and Remote Sensing.",
+    "translations": {
+      "zh": { "content": "我们的论文 BuildFlow 已被 IEEE Transactions on Geoscience and Remote Sensing 接收。" }
+    },
+    "links": [
+      { "text": "IEEE Xplore", "url": "https://ieeexplore.ieee.org/document/11758603" }
+    ]
+  },
+  {
+    "date": "2026-10-07",
+    "content": "Our paper, RegularFlow, has been accepted by IEEE Geoscience and Remote Sensing Letters.",
+    "translations": {
+      "zh": { "content": "我们的论文 RegularFlow 已被 IEEE Geoscience and Remote Sensing Letters 接收。" }
+    },
+    "links": [
+      { "text": "IEEE Xplore", "url": "https://ieeexplore.ieee.org/document/11733487" }
+    ]
+  }
+]
