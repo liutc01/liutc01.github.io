@@ -1,0 +1,20 @@
+name: Import existing homepage history
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Import original homepage without rewriting history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add previous https://github.com/qwerasdzxhjk/qwerasdzxhjk.github.io.git
+          git fetch previous main
+          git merge --allow-unrelated-histories --no-edit previous/main
+          git push origin HEAD:main
