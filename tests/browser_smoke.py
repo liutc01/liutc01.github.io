@@ -132,6 +132,7 @@ def main():
             ]
             assert "advised by Prof. Xinchang Zhang and Dr. Ji Qi" in page.locator(".hero-bio").inner_text()
             assert page.locator(".social-link").count() == 3
+            assert page.locator(".social-link", has_text="GitHub").get_attribute("href") == "https://github.com/liutc01"
             assert page.locator(".contact-details dt").all_text_contents() == ["Email", "Profiles"]
             assert "Office" not in page.locator("#contact").inner_text()
             assert_layout(page, 1440, "desktop proportions")

@@ -128,6 +128,23 @@ test('research interests retain only Generative Modeling and Remote Sensing in b
     }
 });
 
+test('new homepage account and documentation links preserve the original paper repositories', async () => {
+    assert.equal(profile.links.github, 'https://github.com/liutc01');
+    for (const file of ['index.html', 'index.zh.html']) {
+        const html = await read(file);
+        assert.match(html, /class="social-link" href="https:\/\/github\.com\/liutc01"/);
+        assert.doesNotMatch(html, /href="https:\/\/github\.com\/qwerasdzxhjk"/);
+        for (const name of ['BuildFlow', 'RegularFlow']) {
+            assert.ok(html.includes(`href="https://github.com/qwerasdzxhjk/${name}"`), file);
+        }
+    }
+    const readme = await read('README.md');
+    assert.ok(readme.includes('https://liutc01.github.io/'));
+    assert.ok(readme.includes('https://liutc01.github.io/index.zh.html'));
+    assert.ok(readme.includes('https://github.com/liutc01/liutc01.github.io'));
+    assert.doesNotMatch(readme, /https:\/\/qwerasdzxhjk\.github\.io/);
+});
+
 test('fonts are local WOFF2 assets with retained licenses', async () => {
     const css = await read('fonts.css');
     assert.doesNotMatch(css, /https?:/);

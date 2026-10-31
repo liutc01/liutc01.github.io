@@ -4,9 +4,9 @@ An independently designed bilingual static academic homepage for Taochang Liu.
 The approved redesign replaces the old template in the GitHub Pages repository.
 The previous local site and its Git history are backed up outside the repository.
 
-- Website: <https://qwerasdzxhjk.github.io/>
-- Chinese version: <https://qwerasdzxhjk.github.io/index.zh.html>
-- Repository: <https://github.com/qwerasdzxhjk/qwerasdzxhjk.github.io>
+- Website: <https://liutc01.github.io/>
+- Chinese version: <https://liutc01.github.io/index.zh.html>
+- Repository: <https://github.com/liutc01/liutc01.github.io>
 
 ## Preview
 
@@ -132,9 +132,14 @@ grid arrangements and publication figure/text ratio.
 
 ## Publishing
 
-GitHub Pages serves the repository root on the `main` branch. Run the build and
-checks before committing content or design changes, then push the commit to
-`origin/main`. Include the generated HTML, CSS, JS, `.nojekyll`, local `assets/`,
+GitHub Pages serves `liutc01/liutc01.github.io` from the repository root on the
+`main` branch. In Settings > Pages, select Deploy from a branch, `main`, and
+`/ (root)`. Run the build and checks before committing content or design changes,
+then push the commit to `origin/main`. The previous homepage repository is retained
+as the local `old-origin` remote; it is not modified by the migration. The profile
+links to the new `liutc01` account, while BuildFlow and RegularFlow code links
+remain under `qwerasdzxhjk` because those repositories have not moved.
+Include the generated HTML, CSS, JS, `.nojekyll`, local `assets/`,
 and the editable data/templates/tools in the commit. No npm install or server-side
 runtime is required. `.nojekyll` keeps publication and font assets available as
 ordinary static files. Preview/build tools never commit or push automatically.
